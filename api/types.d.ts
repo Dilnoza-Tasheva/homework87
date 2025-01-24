@@ -14,6 +14,7 @@ export interface Post {
     author: string;
     createdAt: string;
     user: string;
+    comments: mongoose.Types.ObjectId[];
 }
 
 export type PostWithoutId = Omit<Post, 'id', | 'createdAt'>
@@ -23,6 +24,7 @@ export interface Comment {
     user: mongoose.Types.ObjectId | string;
     post: mongoose.Types.ObjectId | string;
     text: string;
+    createdAt: string;
 }
 
 export type CommentWithoutId = Omit<Comment, 'id'>

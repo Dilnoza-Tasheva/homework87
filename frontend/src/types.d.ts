@@ -42,6 +42,7 @@ export interface Post {
   image: string | null;
   author: User;
   createdAt: string;
+  comments: Comment[];
 }
 
 export interface PostListResponse {
@@ -54,6 +55,12 @@ export interface PostListResponse {
 export interface PostMutation {
   title: string;
   description: string;
-  createdAt: string;
   image: File | null;
+}
+
+export interface Comment {
+  _id: string;
+  text: string;
+  author: User; // Уже существующий интерфейс User
+  createdAt: string;
 }

@@ -20,10 +20,10 @@ const App = () => {
             <Route path="/" element={<PostList />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </Container>
       </main>
-
     </>
   )
 };

@@ -28,3 +28,19 @@ export const createPost = createAsyncThunk<void, PostMutation>(
     await axiosApi.post("/posts", formData);
   }
 );
+
+export const fetchPostById = createAsyncThunk<Post, string>(
+  "posts/fetchPostById",
+  async (id) => {
+    const postResponse = await axiosApi.get<Post>(`/posts/${id}`);
+    return postResponse.data;
+  }
+);
+
+export const addComment = createAsyncThunk<Comment, { postId: string; text: string }>(
+  "posts/addComment",
+  async ({ postId, text }) => {
+    const response = await axiosApi.post<Comment>(`/posts/${postId}/comments`, { text });
+    return response.data;
+  }
+);
