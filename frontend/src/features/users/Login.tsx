@@ -24,8 +24,12 @@ const Login = () => {
 
     const submitFormHandler = async (event: React.FormEvent) => {
         event.preventDefault();
+      try {
         await dispatch(login(state)).unwrap();
         navigate('/');
+      } catch (error) {
+        console.log("Login error", error);
+      }
     };
 
     return (

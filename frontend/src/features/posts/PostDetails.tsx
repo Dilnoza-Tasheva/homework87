@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { selectPostDetails, selectPostLoading } from './postsSlice.ts';
-import Placeholder from "../../../assets/placeholder.svg";
+import Placeholder from '../../assets/placeholder.svg';
 import { addComment, fetchPostById } from './postsThunk.ts';
 import { apiUrl } from '../../globalConstants.ts';
 

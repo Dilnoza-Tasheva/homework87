@@ -4,9 +4,11 @@ import { fetchPosts } from './postsThunk.ts';
 import Grid from "@mui/material/Grid2";
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { Post } from '../../types';
+import { useNavigate } from 'react-router-dom';
 
 const PostList: React.FC = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const { items, fetchLoading} = useAppSelector((state) => state.posts);
 
   useEffect(() => {
@@ -17,11 +19,15 @@ const PostList: React.FC = () => {
     return <CircularProgress />;
   }
 
+  const handlePostClick = (id: string) => {
+    navigate(`/posts/${id}`);
+  };
+
   return (
     <Grid container spacing={3}>
       {items.map((post: Post) => (
         <Grid key={post._id} size={{xs:12, sm:6, md:4}}>
-          <Card>
+          <Card onClick={() => handlePostClick(post._id)}>
             {post.image && (
               <CardMedia
                 component="img"
