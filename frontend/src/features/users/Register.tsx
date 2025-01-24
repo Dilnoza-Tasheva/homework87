@@ -11,7 +11,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
 import { selectRegisterError } from './usersSlice.ts';
 import { useNavigate } from 'react-router-dom';
 import { register } from './usersThunks.ts';
-import {RegisterMutation} from "../../app/types";
+import { RegisterMutation } from '../../types';
 
 const Register = () => {
     const dispatch = useAppDispatch();

@@ -35,9 +35,25 @@ export interface GlobalError {
   error: string;
 }
 
-export interface TrackHistory {
-  trackId: string;
+export interface Post {
+  _id: string;
   title: string;
-  performer: string;
-  playedAt: string;
+  description: string;
+  image: string | null;
+  author: User;
+  createdAt: string;
+}
+
+export interface PostListResponse {
+  posts: Post[];
+  loading: boolean;
+  error: string | null;
+}
+
+
+export interface PostMutation {
+  title: string;
+  description: string;
+  createdAt: string;
+  image: File | null;
 }
