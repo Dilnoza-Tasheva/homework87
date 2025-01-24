@@ -21,7 +21,7 @@ const AppToolbar = () => {
         <Button component={NavLink} to='/register' color="inherit">
           Register
         </Button>
-        <Button component={NavLink} to='/register' color="inherit">
+        <Button component={NavLink} to='/login' color="inherit">
           Login
         </Button>
       </Toolbar>
