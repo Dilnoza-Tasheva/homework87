@@ -6,7 +6,7 @@ import Login from './features/users/Login.tsx';
 import PostList from './features/posts/PostList.tsx';
 import PostDetails from './features/posts/PostDetails.tsx';
 import PostForm from './features/posts/PostForm.tsx';
-import { useAppDispatch, useAppSelector } from './app/hooks.ts';
+import { useAppSelector } from './app/hooks.ts';
 import { selectUser } from './features/users/usersSlice.ts';
 import { useEffect, useState } from 'react';
 import { PostMutation } from './types';
